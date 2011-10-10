@@ -1,0 +1,12 @@
+%%% -*- mode: erlang -*-
+
+{application, asciiedoc,
+ [
+  {description, "AsciiEDoc application"},
+  {vsn, git},
+  {registered, []},
+  {applications, [kernel, stdlib, sasl]},
+  {modules, [asciiedoc_doclet
+            ]},
+  {env, []}
+ ]}.
