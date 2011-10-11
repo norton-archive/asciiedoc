@@ -20,7 +20,7 @@
 %% OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 %% THE SOFTWARE.
 
--module(asciiedoc_doclet).
+-module(asciiedown_doclet).
 
 -export([run/2, parse_xml/2, expand_text/2]).
 
@@ -30,7 +30,7 @@
 %%%===================================================================
 
 run(Cmd, Ctxt) ->
-    asciiedoc_lib:run(edoc_doclet, Cmd, Ctxt).
+    asciiedoc_lib:run(edown_doclet, Cmd, Ctxt).
 
 parse_xml(Data, Line) ->
     asciiedoc_lib:parse_xml(Data, Line).

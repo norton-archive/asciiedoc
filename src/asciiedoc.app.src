@@ -6,7 +6,9 @@
   {vsn, git},
   {registered, []},
   {applications, [kernel, stdlib, sasl]},
-  {modules, [asciiedoc_doclet
+  {modules, [asciiedoc_lib
+             , asciiedoc_doclet
+             , asciiedown_doclet
             ]},
   {env, []}
  ]}.
