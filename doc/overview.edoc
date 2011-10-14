@@ -1,0 +1,83 @@
+%% -*- Doc -*-
+%% vim: set syntax=asciidoc:
+@author Joseph Wayne Norton <norton@alum.mit.edu>
+@copyright 2011 by Joseph Wayne Norton
+@title AsciiEDoc - EDoc extension for generating HTML or Github-flavored Markdown from AsciiDoc sources
+@doc
+AsciiEdoc is an Erlang application that integrates AsciiDoc with EDoc
+or EDoc with EDown.  This may sound a little crazy at first but the
+primary reasons are:
+
+- Dislike EDoc\'s primitive wiki support.
+- *Really* dislike having to use XHTML for EDoc purposes.
+- Not crazy about Markdown either. Markdown is helpful only in one
+  sense - GitHub integration.
+- AsciiDoc is simple, easy to use, friendly to humans, and yet
+  expressive "enough" to produce high-quality documentation.
+
+This documentation flow is a work-in-progress.  There are some issues
+to investigate (e.g. duplication of overview.edoc contents) and the
+error reporting when something breaks is fragile.  Nevertheless, this
+documentation flow may be of interest to others.
+
+For sample AsciiDoc-annotated overview.edoc and Erlang source files,
+see UBF and UBF-related repositories on GitHub
+(https://github.com/norton/ubf) for details.
+
+_This repository is experimental in nature - use at your own risk and
+please contribute if you find AsciiEDoc useful._
+
+== Quick Start Recipe
+
+To download, build, and test the asciiedoc application in one shot,
+please follow this recipe:
+
+------
+$ mkdir working-directory-name
+$ cd working-directory-name
+$ git clone git://github.com/norton/asciiedoc.git asciiedoc
+$ cd asciiedoc
+$ ./rebar get-deps
+$ ./rebar clean
+$ ./rebar compile
+$ ./rebar doc
+------
+
+== Documentation
+
+=== Where should I start?
+
+This README is the only bit of documentation right now.
+
+=== What is EDoc?
+
+EDoc is the Erlang program documentation generator. Inspired by the
+Javadoc tool for the Java programming language, EDoc is adapted to the
+conventions of the Erlang world, and has several features not found in
+Javadoc.
+
+See http://www.erlang.org/doc/apps/edoc/index.html for further
+details.
+
+=== What is EDown?
+
+EDown is an Erlang application that generates "More-or-less readable"
+Markdown from Erlang program documentation.
+
+See https://github.com/esl/edown for further details.
+
+=== What is AsciiDoc?
+
+AsciiDoc is a text document format for writing notes, documentation,
+articles, books, ebooks, slideshows, web pages, man pages and blogs.
+AsciiDoc files can be translated to many formats including HTML, PDF,
+EPUB, man page.
+
+AsciiDoc is highly configurable: both the AsciiDoc source file syntax
+and the backend output markups (which can be almost any type of
+SGML/XML markup) can be customized and extended by the user.
+
+AsciiDoc is free software and is licenced under the terms of the 'GNU
+General Public License version 2' (GPLv2).
+
+See http://www.methods.co.nz/asciidoc/index.html for further details.
