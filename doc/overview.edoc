@@ -15,10 +15,9 @@ primary reasons are:
 - AsciiDoc is simple, easy to use, friendly to humans, and yet
   expressive "enough" to produce high-quality documentation.
 
-This documentation flow is a work-in-progress.  There are some issues
-to investigate (e.g. duplication of overview.edoc contents) and the
-error reporting when something breaks is fragile.  Nevertheless, this
-documentation flow may be of interest to others.
+This documentation flow is a work-in-progress and the error reporting
+is fragile when something breaks.  Nevertheless, this documentation
+flow may be of interest to others.
 
 For sample AsciiDoc-annotated overview.edoc and Erlang source files,
 see UBF and UBF-related repositories on GitHub
@@ -40,7 +39,7 @@ $ cd asciiedoc
 $ ./rebar get-deps
 $ ./rebar clean
 $ ./rebar compile
-$ ./rebar doc
+$ ./rebar skip_deps=true doc
 ------
 
 == Documentation
@@ -81,3 +80,4 @@ AsciiDoc is free software and is licenced under the terms of the 'GNU
 General Public License version 2' (GPLv2).
 
 See http://www.methods.co.nz/asciidoc/index.html for further details.
+@end
