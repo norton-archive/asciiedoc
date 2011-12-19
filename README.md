@@ -1,8 +1,5 @@
 
 
-#The asciiedoc application#
-
-
 #AsciiEDoc - EDoc extension for generating HTML or Github-flavored Markdown from AsciiDoc sources#
 
 
