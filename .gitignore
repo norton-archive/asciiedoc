@@ -1,4 +1,4 @@
 *.app
 *.beam
-.eunit/
+.test/
 erl_crash.dump
