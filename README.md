@@ -49,7 +49,7 @@ please follow this recipe:</p>
 
 <pre><tt>$ mkdir working-directory-name
 $ cd working-directory-name
-$ git clone git://github.com/norton/asciiedoc.git asciiedoc
+$ git clone https://github.com/norton/asciiedoc.git asciiedoc
 $ cd asciiedoc
 $ ./rebar get-deps
 $ ./rebar clean
