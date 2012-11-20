@@ -37,7 +37,7 @@ is fragile when something breaks.  Nevertheless, this documentation
 flow may be of interest to others.</p>
 <p>For sample AsciiDoc-annotated overview.edoc and Erlang source files,
 see UBF and UBF-related repositories on GitHub
-(<a href="https://github.com/norton/ubf">https://github.com/norton/ubf</a>) for details.</p>
+(<a href="https://github.com/ubf/ubf">https://github.com/ubf/ubf</a>) for details.</p>
 <p><em>This repository is experimental in nature - use at your own risk and
 please contribute if you find AsciiEDoc useful.</em></p>
 

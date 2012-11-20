@@ -21,7 +21,7 @@ flow may be of interest to others.
 
 For sample AsciiDoc-annotated overview.edoc and Erlang source files,
 see UBF and UBF-related repositories on GitHub
-(https://github.com/norton/ubf) for details.
+(https://github.com/ubf/ubf) for details.
 
 _This repository is experimental in nature - use at your own risk and
 please contribute if you find AsciiEDoc useful._
