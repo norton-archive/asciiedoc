@@ -47,14 +47,11 @@ please contribute if you find AsciiEDoc useful.</em></p>
 please follow this recipe:</p>
 
 
-<pre><tt>$ mkdir working-directory-name
+<pre><code>$ mkdir working-directory-name
 $ cd working-directory-name
 $ git clone https://github.com/norton/asciiedoc.git asciiedoc
 $ cd asciiedoc
-$ ./rebar get-deps
-$ ./rebar clean
-$ ./rebar compile
-$ ./rebar skip_deps=true doc</tt></pre>
+$ make deps clean compile doc</code></pre>
 
 
 
