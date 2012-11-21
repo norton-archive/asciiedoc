@@ -36,10 +36,7 @@ $ mkdir working-directory-name
 $ cd working-directory-name
 $ git clone https://github.com/norton/asciiedoc.git asciiedoc
 $ cd asciiedoc
-$ ./rebar get-deps
-$ ./rebar clean
-$ ./rebar compile
-$ ./rebar skip_deps=true doc
+$ make deps clean compile doc
 ------
 
 == Documentation
