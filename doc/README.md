@@ -88,7 +88,7 @@ and the backend output markups (which can be almost any type of
 SGML/XML markup) can be customized and extended by the user.</p>
 <p>AsciiDoc is free software and is licenced under the terms of the <em>GNU
 General Public License version 2</em> (GPLv2).</p>
-<p>See <a href="http://www.methods.co.nz/asciidoc/index.md">http://www.methods.co.nz/asciidoc/index.html</a> for further details.</p>
+<p>See <a href="http://www.methods.co.nz/asciidoc/index.html">http://www.methods.co.nz/asciidoc/index.html</a> for further details.</p>
 
 
 
