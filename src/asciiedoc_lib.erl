@@ -24,6 +24,7 @@
 
 -export([run/3, parse_xml/2, expand_text/2]).
 
+-include_lib("edoc/include/edoc_doclet.hrl").
 -include_lib("xmerl/include/xmerl.hrl").
 
 
@@ -32,19 +33,26 @@
 %%%===================================================================
 
 run(Mod, Cmd, Ctxt) ->
+    %% Extract top_level_readme
+    TopLevelReadme = proplists:get_value(top_level_readme, Ctxt#context.opts),
+
     %% NOTE: Enable tracing to troubleshoot failures.
     %% catch user_default:dbgon(edoc_lib,write_file),
     meck:new(edoc_wiki, []),
+    meck:new(edown_lib, []),
     try
         meck:expect(edoc_wiki, parse_xml, fun parse_xml/2),
         meck:expect(edoc_wiki, expand_text, fun expand_text/2),
+        meck:expect(edown_lib, redirect_uri, fun(E) -> redirect_uri(TopLevelReadme, E) end),
         %% NOTE: Enable edoc_doclet for HTML output
         %% edoc_doclet:run(Cmd, Ctxt)
         Mod:run(Cmd, Ctxt)
     after
+        meck:unload(edown_lib),
         meck:unload(edoc_wiki)
     end.
 
+%% parse_xml/2
 parse_xml(Data, Line) ->
     parse_xml_1(expand_text(Data, Line), Line).
 
@@ -62,6 +70,11 @@ parse_xml_1(Text, Line) ->
             throw_error(Line, {"nocatch in XML parser: ~P.", [Other, 10]})
     end.
 
+-spec throw_error(non_neg_integer(), {string(), [_]}) -> no_return().
+throw_error(L, D) ->
+    throw({error, L, D}).
+
+%% expand_text/2
 expand_text(Cs, L) ->
     DirName = filename:join(["/", "tmp", ?MODULE_STRING]),
     {A,B,C}=now(),
@@ -108,6 +121,37 @@ asciidoc_loop(Port, Acc) ->
             {error, {Rc, lists:flatten(lists:reverse(Acc))}}
     end.
 
--spec throw_error(non_neg_integer(), {string(), [_]}) -> no_return().
-throw_error(L, D) ->
-    throw({error, L, D}).
+%% redirect_uri/2
+redirect_uri(undefined, E) ->
+    meck:passthrough([E]);
+redirect_uri(TopLevelReadme, #xmlElement{} = E) ->
+    redirect_uri(TopLevelReadme, get_attrval(href, E), E);
+redirect_uri(_TopLevelReadme, _E) ->
+    false.
+
+redirect_uri({_File, BaseHref}, URI, E) ->
+    case lists:suffix(".html", URI) of
+        false ->
+            meck:passthrough([E]);
+        true ->
+            case lists:prefix(BaseHref, URI) of
+                true ->
+                    meck:passthrough([E]);
+                false ->
+                    false
+            end
+    end.
+
+get_attrval(Name, #xmlElement{attributes = As}) ->
+    case get_attr(Name, As) of
+        [#xmlAttribute{value = V}] ->
+            V;
+        [] -> ""
+    end.
+
+get_attr(Name, [#xmlAttribute{name = Name} = A | As]) ->
+    [A | get_attr(Name, As)];
+get_attr(Name, [_ | As]) ->
+    get_attr(Name, As);
+get_attr(_, []) ->
+    [].
