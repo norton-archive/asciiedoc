@@ -3,7 +3,7 @@
 #AsciiEDoc - EDoc extension for generating HTML or Github-flavored Markdown from AsciiDoc sources#
 
 
-Copyright (c) 2011-2012 by Joseph Wayne Norton
+Copyright (c) 2011-2013 by Joseph Wayne Norton
 
 __Authors:__ Joseph Wayne Norton ([`norton@alum.mit.edu`](mailto:norton@alum.mit.edu)).<p>AsciiEdoc is an Erlang application that integrates AsciiDoc with EDoc
 or EDoc with EDown.  This may sound a little crazy at first but the
