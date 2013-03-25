@@ -1,3 +1,4 @@
+%% encoding: UTF-8
 {application,asciiedoc}.
 {packages,[]}.
 {modules,[asciiedoc_doclet,asciiedoc_lib,asciiedown_doclet]}.
