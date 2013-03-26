@@ -140,7 +140,9 @@ redirect_uri({_File, BaseHref}, URI, E) ->
                 false ->
                     false
             end
-    end.
+    end;
+redirect_uri({_File, BaseHref, _Branch}, URI, E) ->
+    redirect_uri({_File, BaseHref}, URI, E).
 
 get_attrval(Name, #xmlElement{attributes = As}) ->
     case get_attr(Name, As) of
