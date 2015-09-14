@@ -44,6 +44,7 @@ run(Mod, Cmd, Ctxt) ->
         meck:expect(edoc_wiki, parse_xml, fun parse_xml/2),
         meck:expect(edoc_wiki, expand_text, fun expand_text/2),
         meck:expect(edown_lib, redirect_uri, fun(E) -> redirect_uri(TopLevelReadme, E) end),
+        meck:expect(edown_lib, export, fun(D, O) -> meck:passthrough([D, O]) end),
         %% NOTE: Enable edoc_doclet for HTML output
         %% edoc_doclet:run(Cmd, Ctxt)
         Mod:run(Cmd, Ctxt)
