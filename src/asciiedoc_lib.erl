@@ -159,11 +159,10 @@ get_attr(Name, [_ | As]) ->
 get_attr(_, []) ->
     [].
 
--compile({nowarn_deprecated_function, [{erlang, now, 0}]}).
 my_now() ->
     case erlang:function_exported(erlang, timestamp, 0) of
         true ->
             erlang:timestamp();
         false ->
-            erlang:now()
+            apply(erlang, now, [])
     end.
