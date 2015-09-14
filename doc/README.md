@@ -5,6 +5,7 @@
 Copyright (c) 2011-2015 by Joseph Wayne Norton
 
 __Authors:__ Joseph Wayne Norton ([`norton@alum.mit.edu`](mailto:norton@alum.mit.edu)).
+
 <p>AsciiEdoc is an Erlang application that integrates AsciiDoc with EDoc
 or EDoc with EDown.  This may sound a little crazy at first but the
 primary reasons are:</p>
@@ -91,14 +92,4 @@ General Public License version 2</em> (GPLv2).</p>
 <p>See <a href="http://www.methods.co.nz/asciidoc/index.html">http://www.methods.co.nz/asciidoc/index.html</a> for further details.</p>
 
 
-
-
-
-## Modules ##
-
-
-<table width="100%" border="0" summary="list of modules">
-<tr><td><a href="asciiedoc_doclet.md" class="module">asciiedoc_doclet</a></td></tr>
-<tr><td><a href="asciiedoc_lib.md" class="module">asciiedoc_lib</a></td></tr>
-<tr><td><a href="asciiedown_doclet.md" class="module">asciiedown_doclet</a></td></tr></table>
 

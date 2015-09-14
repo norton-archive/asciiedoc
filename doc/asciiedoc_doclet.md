@@ -4,7 +4,6 @@
 * [Function Index](#index)
 * [Function Details](#functions)
 
-
 <a name="index"></a>
 
 ## Function Index ##
@@ -23,18 +22,15 @@
 
 `expand_text(Cs, L) -> any()`
 
-
 <a name="parse_xml-2"></a>
 
 ### parse_xml/2 ###
 
 `parse_xml(Data, Line) -> any()`
 
-
 <a name="run-2"></a>
 
 ### run/2 ###
 
 `run(Cmd, Ctxt) -> any()`
-
 
