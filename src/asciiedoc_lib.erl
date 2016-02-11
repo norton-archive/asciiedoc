@@ -78,7 +78,7 @@ throw_error(L, D) ->
 %% expand_text/2
 expand_text(Cs, L) ->
     DirName = filename:join(["/", "tmp", ?MODULE_STRING]),
-    {A,B,C} = my_now(),
+    {A,B,C} = os:timestamp(),
     Unique = lists:flatten(io_lib:format("~p-~p.~p.~p",[node(),A,B,C])),
     FileName = filename:join([DirName, Unique]),
     In = FileName ++ ".in",
@@ -158,11 +158,3 @@ get_attr(Name, [_ | As]) ->
     get_attr(Name, As);
 get_attr(_, []) ->
     [].
-
-my_now() ->
-    case erlang:function_exported(erlang, timestamp, 0) of
-        true ->
-            erlang:timestamp();
-        false ->
-            apply(erlang, now, [])
-    end.
