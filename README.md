@@ -2,7 +2,7 @@
 
 # AsciiEDoc - EDoc extension for generating HTML or Github-flavored Markdown from AsciiDoc sources #
 
-Copyright (c) 2011-2015 by Joseph Wayne Norton
+Copyright (c) 2011-2016 by Joseph Wayne Norton
 
 __Authors:__ Joseph Wayne Norton ([`norton@alum.mit.edu`](mailto:norton@alum.mit.edu)).
 
